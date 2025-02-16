@@ -10,28 +10,25 @@ const Header = async () => {
   await checkUser();
 
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <header className="fixed top-0 w-full bg-neutral-900/90 backdrop-blur-sm z-50 border-b border-gray-700">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
-            src={"/logo.png"}
-            alt="Welth Logo"
+            src={"/Trackit.png"}
+            alt="Logo"
             width={200}
             height={60}
-            className="h-12 w-auto object-contain"
+            className="h-12 w-auto object-contain rounded-lg"
           />
         </Link>
 
         {/* Navigation Links - Different for signed in/out users */}
         <div className="hidden md:flex items-center space-x-8">
           <SignedOut>
-            <a href="#features" className="text-gray-600 hover:text-blue-600">
+            <a href="#features" className="text-gray-300 hover:text-white">
               Features
             </a>
-            <a
-              href="#testimonials"
-              className="text-gray-600 hover:text-blue-600"
-            >
+            <a href="#testimonials" className="text-gray-300 hover:text-white">
               Testimonials
             </a>
           </SignedOut>
@@ -42,30 +39,45 @@ const Header = async () => {
           <SignedIn>
             <Link
               href="/dashboard"
-              className="text-gray-600 hover:text-blue-600 flex items-center gap-2"
+              className="flex items-center gap-2 text-gray-300 hover:text-white"
             >
-              <Button variant="outline">
-                <LayoutDashboard size={18} />
-                <span className="hidden md:inline">Dashboard</span>
+              <Button
+                className="relative overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-violet-900 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10 flex items-center gap-2 border-none">
+                  <LayoutDashboard size={18} />
+                  <span className="hidden md:inline">Dashboard</span>
+                </div>
               </Button>
             </Link>
             <a href="/transaction/create">
-              <Button className="flex items-center gap-2">
-                <PenBox size={18} />
-                <span className="hidden md:inline">Add Transaction</span>
+              <Button
+                className="relative overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10 flex items-center gap-2">
+                  <PenBox size={18} />
+                  <span className="hidden md:inline">Add Transaction</span>
+                </div>
               </Button>
             </a>
           </SignedIn>
           <SignedOut>
             <SignInButton forceRedirectUrl="/dashboard">
-              <Button variant="outline">Login</Button>
+              <Button
+                variant="outline"
+                className="bg-white text-gray-900 border-gray-700 hover:bg-neutral-700"
+              >
+                Login
+              </Button>
             </SignInButton>
           </SignedOut>
           <SignedIn>
             <UserButton
               appearance={{
                 elements: {
-                  avatarBox: "w-10 h-10",
+                  avatarBox: "w-10 h-10 border border-gray-700",
                 },
               }}
             />
