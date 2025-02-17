@@ -13,11 +13,11 @@ const Header = async () => {
     <header className="fixed top-0 w-full bg-neutral-900/90 backdrop-blur-sm z-50 border-b border-gray-700">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
-          <Image
+          <Image 
             src={"/Trackit.png"}
             alt="Logo"
-            width={200}
-            height={60}
+            width={220}
+            height={64}
             className="h-12 w-auto object-contain rounded-lg"
           />
         </Link>
