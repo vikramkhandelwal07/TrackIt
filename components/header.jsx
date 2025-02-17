@@ -18,6 +18,7 @@ const Header = async () => {
             alt="Logo"
             width={200}
             height={64}
+            priority={false}
             className="h-12 w-auto object-contain rounded-lg"
           />
         </Link>
