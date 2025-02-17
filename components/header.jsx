@@ -10,7 +10,7 @@ const Header = async () => {
   await checkUser();
 
   return (
-    <header className="fixed top-0 w-full bg-gray-200 backdrop-blur-sm z-50 ">
+    <header className="fixed top-0 w-full bg-gray-100 backdrop-blur-sm z-50 ">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <Image 
@@ -19,7 +19,7 @@ const Header = async () => {
             width={200}
             height={64}
             priority={false}
-            className="h-12 w-auto object-contain rounded-lg"
+            className="h-12 w-auto pl-16"
           />
         </Link>
 
