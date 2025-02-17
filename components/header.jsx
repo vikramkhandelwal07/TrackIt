@@ -10,13 +10,13 @@ const Header = async () => {
   await checkUser();
 
   return (
-    <header className="fixed top-0 w-full bg-neutral-900/90 backdrop-blur-sm z-50 border-b border-gray-700">
+    <header className="fixed top-0 w-full bg-white backdrop-blur-sm z-50 border-b border-gray-700">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <Image 
             src={"/Trackit.png"}
             alt="Logo"
-            width={220}
+            width={200}
             height={64}
             className="h-12 w-auto object-contain rounded-lg"
           />
