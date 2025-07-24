@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
-
+import { ThemeProvider } from "../components/ThemeContext"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className="dark">
         <head>
           <link rel="icon" href="/TrackIt.png" sizes="any" />
         </head>
