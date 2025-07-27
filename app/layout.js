@@ -13,23 +13,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en" className="dark">
-        <head>
-          <link rel="icon" href="/TrackIt.png" sizes="any" />
-        </head>
-        <body className={`${inter.className}`}>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Toaster richColors />
+    <ThemeProvider>
+      <ClerkProvider>
+        <html lang="en" className="dark">
+          <head>
+            <link rel="icon" href="/TrackIt.png" sizes="any" />
+          </head>
+          <body className={`${inter.className}`}>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Toaster richColors />
 
-          <footer className="bg-black py-12">
-            <div className="container mx-auto px-4 text-center text-gray-600">
-              <p className="text-white text-xl ">Made By Vikram Khandelwal</p>
-            </div>
-          </footer>
-        </body>
-      </html>
-    </ClerkProvider>
+            <footer className="bg-black py-12">
+              <div className="container mx-auto px-4 text-center text-gray-600">
+                <p className="text-white text-xl ">Made By Vikram Khandelwal</p>
+              </div>
+            </footer>
+          </body>
+        </html>
+      </ClerkProvider>
+    </ThemeProvider>
   );
 }

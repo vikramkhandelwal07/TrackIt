@@ -13,20 +13,22 @@ import FAQSection from "@/components/FAQSection";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-neutral-950 transition-colors duration-300">
       {/* Hero Section */}
       <HeroSection />
 
       {/* Stats Section */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsData.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">
+              <div key={index} className="text-center group">
+                <div className="text-4xl font-bold text-neutral-700 dark:text-neutral-300 mb-2 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-300">
                   {stat.value}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -34,18 +36,30 @@ const LandingPage = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+      <section
+        id="features"
+        className="py-20 bg-white dark:bg-neutral-950 transition-colors duration-300"
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
             Everything you need to manage your finances
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {featuresData.map((feature, index) => (
-              <Card className="p-6 shadow-lg" key={index}>
+              <Card
+                className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 group w-full max-w-sm"
+                key={index}
+              >
                 <CardContent className="space-y-4 pt-4">
-                  {feature.icon}
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <div className="text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                    {feature.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -54,17 +68,25 @@ const LandingPage = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-blue-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-14 border-2 pt-8 pb-14 rounded-full">
+          <h2 className="text-3xl font-bold text-center mb-16 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center">
             {howItWorksData.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  {step.icon}
+              <div key={index} className="text-center group max-w-sm">
+                <div className="w-16 h-16 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700 transition-colors duration-300 border border-neutral-200 dark:border-neutral-700">
+                  <div className="text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors duration-300">
+                    {step.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+                  {step.title}
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -72,14 +94,20 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">
+      <section
+        id="testimonials"
+        className="py-20 bg-white dark:bg-neutral-950 transition-colors duration-300"
+      >
+        <div className="container mx-auto px-4 max-w-7xl ">
+          <h2 className="text-3xl font-bold text-center mb-16 text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
             What Our Users Say
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
             {testimonialsData.map((testimonial, index) => (
-              <Card key={index} className="p-6 shadow-lg ">
+              <Card
+                key={index}
+                className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 group"
+              >
                 <CardContent className="pt-4">
                   <div className="flex items-center mb-4">
                     <Image
@@ -87,16 +115,20 @@ const LandingPage = () => {
                       alt={testimonial.name}
                       width={40}
                       height={40}
-                      className="rounded-full"
+                      className="rounded-full border-2 border-neutral-200 dark:border-neutral-700"
                     />
                     <div className="ml-4">
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600 group" >
+                      <div className="font-semibold text-neutral-900 dark:text-neutral-100 transition-colors duration-300">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
                         {testimonial.role}
                       </div>
                     </div>
                   </div>
-                  <p className="text-gray-600">{testimonial.quote}</p>
+                  <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                    {testimonial.quote}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -105,31 +137,31 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black rounded-t-3xl">
-        <div className="container mx-auto px-4">
-          <div className="relative bg-blue-600 rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/50 to-purple-500/50 mix-blend-multiply"></div>
-            <div className="absolute right-0 top-0 -mt-20 -mr-20 w-96 h-96 bg-blue-400 rounded-full opacity-20 blur-3xl"></div>
-            <div className="absolute left-0 bottom-0 -mb-20 -ml-20 w-96 h-96 bg-purple-400 rounded-full opacity-20 blur-3xl"></div>
+      <section className="py-20 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="relative bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950 dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-neutral-700/30 via-neutral-800/30 to-neutral-900/30 dark:from-neutral-600/30 dark:via-neutral-700/30 dark:to-neutral-800/30"></div>
+            <div className="absolute right-0 top-0 -mt-20 -mr-20 w-96 h-96 bg-neutral-600 dark:bg-neutral-500 rounded-full opacity-10 blur-3xl"></div>
+            <div className="absolute left-0 bottom-0 -mb-20 -ml-20 w-96 h-96 bg-neutral-700 dark:bg-neutral-600 rounded-full opacity-10 blur-3xl"></div>
 
             <div className="relative py-16 px-8 md:py-24 md:px-12">
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                   Ready to Take Control of Your Finances?
                 </h2>
-                <p className="text-lg md:text-xl text-blue-100 mb-8">
-                  Join thousands of users who are already managing their finances
-                  smarter with TrackIt&apos;s AI-powered platform.
+                <p className="text-lg md:text-xl text-neutral-200 dark:text-neutral-300 mb-8">
+                  Join thousands of users who are already managing their
+                  finances smarter with TrackIt&apos;s AI-powered platform.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition duration-300">
-                    Get Started Free
+                  <Button className="group px-8 py-4 bg-white text-neutral-900 rounded-xl font-semibold hover:bg-neutral-100 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <span className="relative z-10">Get Started Free</span>
                   </Button>
-                  <Button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition duration-300">
-                    Schedule Demo
+                  <Button className="group px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
+                    <span className="relative z-10">Schedule Demo</span>
                   </Button>
                 </div>
-                <p className="mt-6 text-blue-100 text-sm">
+                <p className="mt-6 text-neutral-300 dark:text-neutral-400 text-sm">
                   No credit card required • 14-day free trial • Cancel anytime
                 </p>
               </div>
@@ -138,21 +170,37 @@ const LandingPage = () => {
 
           {/* Trust Indicators */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">10K+</div>
-              <p className="text-blue-100">Active Users</p>
+            <div className="text-center group">
+              <div className="text-3xl font-bold text-neutral-800 dark:text-neutral-200 mb-2 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-300">
+                10K+
+              </div>
+              <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                Active Users
+              </p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">$1M+</div>
-              <p className="text-blue-100">Tracked Monthly</p>
+            <div className="text-center group">
+              <div className="text-3xl font-bold text-neutral-800 dark:text-neutral-200 mb-2 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-300">
+                $1M+
+              </div>
+              <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                Tracked Monthly
+              </p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">4.9/5</div>
-              <p className="text-blue-100">User Rating</p>
+            <div className="text-center group">
+              <div className="text-3xl font-bold text-neutral-800 dark:text-neutral-200 mb-2 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-300">
+                4.9/5
+              </div>
+              <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                User Rating
+              </p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
-              <p className="text-blue-100">Uptime</p>
+            <div className="text-center group">
+              <div className="text-3xl font-bold text-neutral-800 dark:text-neutral-200 mb-2 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-300">
+                99.9%
+              </div>
+              <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
+                Uptime
+              </p>
             </div>
           </div>
         </div>
@@ -162,19 +210,21 @@ const LandingPage = () => {
       <FAQSection />
 
       {/* Footer Section */}
-      <footer className="bg-neutral-900 pt-20 pb-10">
-        <div className="container mx-auto px-4">
+      <footer className="bg-neutral-100 dark:bg-neutral-950 transition-colors duration-300 pt-20 pb-10 border-t border-neutral-200 dark:border-neutral-800">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white mb-6">TrackIt</h3>
-              <p className="text-gray-400">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6 transition-colors duration-300">
+                TrackIt
+              </h3>
+              <p className="text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
                 Smart financial management powered by AI to help you make better
                 financial decisions.
               </p>
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-300"
                 >
                   <svg
                     className="w-6 h-6"
@@ -186,7 +236,7 @@ const LandingPage = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-300"
                 >
                   <svg
                     className="w-6 h-6"
@@ -198,7 +248,7 @@ const LandingPage = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors"
+                  className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-300"
                 >
                   <svg
                     className="w-6 h-6"
@@ -211,14 +261,14 @@ const LandingPage = () => {
               </div>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-white mb-6">
+              <h4 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-6 transition-colors duration-300">
                 Quick Links
               </h4>
               <ul className="space-y-4">
                 <li>
                   <a
                     href="#features"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300"
                   >
                     Features
                   </a>
@@ -226,7 +276,7 @@ const LandingPage = () => {
                 <li>
                   <a
                     href="#testimonials"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300"
                   >
                     Testimonials
                   </a>
@@ -234,7 +284,7 @@ const LandingPage = () => {
                 <li>
                   <a
                     href="#faq"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300"
                   >
                     FAQ
                   </a>
@@ -242,12 +292,14 @@ const LandingPage = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-white mb-6">Legal</h4>
+              <h4 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-6 transition-colors duration-300">
+                Legal
+              </h4>
               <ul className="space-y-4">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300"
                   >
                     Privacy Policy
                   </a>
@@ -255,7 +307,7 @@ const LandingPage = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300"
                   >
                     Terms of Service
                   </a>
@@ -263,7 +315,7 @@ const LandingPage = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300"
                   >
                     Security
                   </a>
@@ -271,9 +323,11 @@ const LandingPage = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-white mb-6">Contact</h4>
+              <h4 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-6 transition-colors duration-300">
+                Contact
+              </h4>
               <ul className="space-y-4">
-                <li className="flex items-center text-gray-400">
+                <li className="flex items-center text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
                   <svg
                     className="w-5 h-5 mr-3"
                     fill="none"
@@ -289,7 +343,7 @@ const LandingPage = () => {
                   </svg>
                   support@trackit.com
                 </li>
-                <li className="flex items-center text-gray-400">
+                <li className="flex items-center text-neutral-600 dark:text-neutral-400 transition-colors duration-300">
                   <svg
                     className="w-5 h-5 mr-3"
                     fill="none"
@@ -308,27 +362,27 @@ const LandingPage = () => {
               </ul>
             </div>
           </div>
-          <div className="pt-8 mt-8 border-t border-neutral-800">
+          <div className="pt-8 mt-8 border-t border-neutral-200 dark:border-neutral-800">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm transition-colors duration-300">
                 © 2024 TrackIt. All rights reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors text-sm"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300 text-sm"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors text-sm"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300 text-sm"
                 >
                   Terms of Service
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors text-sm"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 transition-colors duration-300 text-sm"
                 >
                   Cookie Policy
                 </a>
